@@ -4,6 +4,14 @@ Uncharted: The Nathan Drake Collection PC port, by **BilalReloaded**
 ([YouTube](https://www.youtube.com/@BilalReloaded/videos), [GitHub](https://github.com/bc160201983)).
 Technical details of every item: [analysis/STATUS.md](analysis/STATUS.md).
 
+## Unreleased
+
+- **Shadows no longer cut out past the 16:9 area** at 21:9 and 32:9 (Uncharted 2): the sun, rain
+  and local light (flashlight, lamps) shadows culled their casters with the camera's 16:9 view,
+  so shadows at the sides of the picture came and went as the camera turned. Their culling
+  frustums, and the scene view's GPU constants built the same way, now use the wider view.
+  `UNCHARTED_UW_SHADOWS=0` / `UNCHARTED_UW_VIEW_CONSTANTS=0` switch them off.
+
 ## 21 October 2026 (0.5.0)
 
 - **Wrong-looking surfaces from a damaged shader cache are repaired**: in Uncharted 3's museum the
